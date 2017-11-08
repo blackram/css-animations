@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>carousel of divs</title>
+
+  <style>
+  
+	 html {
+		height:100%;
+		min-height: 100%
+	 }
+	 .carousel {
+	    margin-top:100px;
+		width:100%;	
+		height:500px;
+	 }
+	 
+	 .stage
+	 {		
+	    position:relative;
+		display:flex;
+		overflow: visible;		
+		height:100%;
+		width:100%;
+		opacity:1;
+	 }
+	 
+	 .cell
+	 {
+		flex:1;
+	
+		height:inherit;
+		width:inherit;		
+		display:block;
+	 }
+	 
+	 .content {
+		z-index:0;
+		position:absolute;
+		width:33.3%;
+		height:100%;
+	 }
+
+	 	 /* 
+	    z-index   meaning
+	      0       default cell location
+			  -50     obscured
+				150     in centre highlight 
+	*/
+
+	 @keyframes first {	   
+	  	0%  { z-index:0;   left:0%;     top:0%; width:33.3%; height:100%; opacity:1} 	
+		20% { z-index:0;   left:0%;     top:0%; display:none; opacity:0}		
+		40% { z-index:0;   left:100%;   width:0%; opacity:0; display:none}		
+		60% { z-index:0;   left:66.6%; top:0px;  width:33.3%; height:100%}		
+		80% { z-index:150; left:23.3%;  top:-10%; width:53.3%; height:120%; opacity:1}				
+		100% { z-index:0;  left:0%;     top:0%;   width:33.3%; height:100%; opacity:1}		
+	 }
+	 
+	 @keyframes second { 	    
+		 0% { z-index:0;   left:23.3%; top:-10%; width:53.3%; height:120%} 		
+		20% { z-index:0;     left:0%;    top:0%; width:33.3%;height:100%; opacity:1}		
+		40% { z-index:0;     left:0%;   opacity:0; display:none; }					   
+		60% { z-index:0;     left:100%; opacity:0; display:none; width:0%}
+		80% { z-index:0;     left:66.6%; opacity:1;  top:0%; width:33.3%; height:100%}
+		100% {z-index:150;   left:23.3%; top:-10%;  width:53.3%; height:120%}				
+	 }	 
+
+   @keyframes third {		  
+		0%   { z-index:0;   left:66.6%;  top:0%; width:33.3%;height:100%}
+		20%  { z-index:150; top:-10%;  left:23.3%;width:53.3%;height:120%}
+		40%  { z-index:0;   left:0%; top:0%;width:33.3%;height:100%;opacity:1 }
+		60%  { z-index:0;   left:0%; display: none; opacity:0}
+		80%  { z-index:0;   left:100%; opacity:0;display:none;width:0%}
+		100% { z-index:0;   left:66.6%; width:33.3%; height:100%; opacity:1}
+	 }
+	
+	@keyframes fourth {      
+		0%   { z-index:0;   left:100%; opacity:0;width:0%}
+		20%  { z-index:0;   left:66.6%; top:0%;width:33.3%; height:100%; opacity:1}
+		40%  { z-index:150; left:23.3%; top:-10%; width:53.3%;height:120% }
+		60%  { z-index:0;   left:0%;    top:0%; width:33.3%;height:100%; opacity:1}
+		80%  { z-index:0;   left:0%;   opacity:0; display:none; }
+		100% { z-index:0;   left:100%; opacity:0;display:none;width:0%}
+	}
+
+	@keyframes fifth {      			
+		0%  { z-index:0;   left:0%;   opacity:0; display:none; }
+		20%  { z-index:0;   left:100%; opacity:0;width:0%}
+		40%  { z-index:0;   left:66.6%; top:0%;width:33.3%; height:100%; opacity:1}
+		60%  {  z-index:150; left:23.3%; top:-10%; width:53.3%;height:120%}
+		80%  {  z-index:0;   left:0%;    top:0%; width:33.3%;height:100%; opacity:1 }
+		100% { z-index:0;   left:0%;   opacity:0; display:none;}
+	}
+
+	 .cell-1 .content-1 {	 	   
+		animation:first;
+		animation-name:first;		
+		background-color:red;
+		animation-duration:20s;	
+		animation-iteration-count:infinite;
+		animation-delay:2s;
+	 }
+	
+	 .cell-2 .content-2 {
+	    animation:second;
+		animation-name:second;		
+		background-color:green;
+		animation-duration:20s;
+		animation-iteration-count:infinite;
+		animation-delay:2s;
+
+		z-index:150;left:23.3%; top:-10%;  width:53.3%; height:120%
+	 }
+		
+	 .cell-3 .content-3 {
+	    animation:third;
+		animation-name:third;		
+		background-color:blue;
+		animation-duration:20s;
+		animation-iteration-count:infinite;
+		animation-delay:2s;
+		
+	 }
+	
+	 .cell-3 .content-4 {
+	    animation:fourth;
+		animation-name:fourth;		
+		background-color:orange;
+		animation-duration:20s;
+		animation-iteration-count:infinite;
+		animation-delay:2s;
+
+		z-index:0;   left:100%; width:0%; opacity:0
+	 }
+
+	 .cell-3 .content-5 {
+	    animation:fifth;
+		animation-name:fifth;		
+		background-color:black;
+		animation-duration:20s;
+		animation-iteration-count:infinite;
+		animation-delay:2s;
+		color:white;
+
+		z-index:0;   left:100%; width:0%; opacity:0
+	 }
+
+  </style>
+</head>
+<body>
+
+<!-- first demo to animate the movement of the carousel -->
+	<div class="carousel">	
+
+	  <div class="stage">	 
+	  
+	    <div class="cell cell-1">
+				<div class="content content-1">
+					cell 1
+				</div>
+			</div>
+
+			<div class="cell cell-2">
+				<div class="content content-2">
+					cell 2
+				</div>
+			</div>
+			
+			<div class="cell cell-3">
+				<div class="content content-3">
+					cell 3
+				</div>
+				<div class="content content-4">
+						cell 4
+				</div>
+				<div class="content content-5">
+						cell 5
+				</div>			
+			</div>
+				 
+
+		</div>	
+		 
+	</div>
+</body>
+</html>
