@@ -10,12 +10,13 @@
 		height:100%;
 		min-height: 100%
 	 }
+	 
 	 .carousel {
 	    margin-top:100px;
 		width:100%;	
 		height:500px;
 	 }
-	 
+	 	 
 	 .stage
 	 {		
 	    position:relative;
@@ -24,6 +25,7 @@
 		height:100%;
 		width:100%;
 		opacity:1;
+		
 	 }
 	 
 	 .cell
@@ -42,111 +44,204 @@
 		height:100%;
 	 }
 
-	 	 /* 
+	/* 
 	    z-index   meaning
-	      0       default cell location
-			  -50     obscured
-				150     in centre highlight 
+	    0       default cell location
+		-50     obscured
+		150     in centre highlight 
 	*/
 
+	
 	 @keyframes first {	   
-	  	0%  { z-index:0;   left:0%;     top:0%; width:33.3%; height:100%; opacity:1} 	
-		20% { z-index:0;   left:0%;     top:0%; display:none; opacity:0}		
-		40% { z-index:0;   left:100%;   width:0%; opacity:0; display:none}		
-		60% { z-index:0;   left:66.6%; top:0px;  width:33.3%; height:100%}		
-		80% { z-index:150; left:23.3%;  top:-10%; width:53.3%; height:120%; opacity:1}				
-		100% { z-index:0;  left:0%;     top:0%;   width:33.3%; height:100%; opacity:1}		
+	  	0%   { z-index:0;   left:0%;     top:0%;   width:33.3%; height:100%;                 opacity:1} 	
+		20%  { z-index:0;   left:0%;     top:0%;                               display:none; opacity:0}		
+		40%  { z-index:0;   left:66.6%;            width:33.3%;                              opacity:0;}		
+		60%  { z-index:0;   left:66.6%;  top:0px;  width:33.3%; height:100%;}		
+		80%  { z-index:150; left:23.3%;  top:-10%; width:53.3%; height:120%;                 opacity:1}				
+		100% { z-index:0;   left:0%;     top:0%;   width:33.3%; height:100%;                 opacity:1}		
 	 }
 	 
+	 @-webkit-keyframes first {	   
+	  	0%   { z-index:0;   left:0%;     top:0%;   width:33.3%; height:100%;                 opacity:1} 	
+		20%  { z-index:0;   left:0%;     top:0%;                               display:none; opacity:0}		
+		40%  { z-index:0;   left:66.6%;            width:33.3%;                              opacity:0;}		
+		60%  { z-index:0;   left:66.6%;  top:0px;  width:33.3%; height:100%;}		
+		80%  { z-index:150; left:23.3%;  top:-10%; width:53.3%; height:120%;                 opacity:1}				
+		100% { z-index:0;   left:0%;     top:0%;   width:33.3%; height:100%;                 opacity:1}				
+	 }
+	 
+	 
+	
 	 @keyframes second { 	    
-		 0% { z-index:0;   left:23.3%; top:-10%; width:53.3%; height:120%} 		
-		20% { z-index:0;     left:0%;    top:0%; width:33.3%;height:100%; opacity:1}		
-		40% { z-index:0;     left:0%;   opacity:0; display:none; }					   
-		60% { z-index:0;     left:100%; opacity:0; display:none; width:0%}
-		80% { z-index:0;     left:66.6%; opacity:1;  top:0%; width:33.3%; height:100%}
-		100% {z-index:150;   left:23.3%; top:-10%;  width:53.3%; height:120%}				
+		 0%  { z-index:150;   left:23.3%; top:-10%; width:53.3%; height:120%} 		
+		20%  { z-index:0;     left:0%;    top:0%;   width:33.3%; height:100%;                opacity:1}		
+		40%  { z-index:0;     left:0%;                                        display:none;  opacity:0;}					   
+		60%  { z-index:0;     left:66.6%;           width:33.3%;              display:none;  opacity:0;}
+		80%  { z-index:0;     left:66.6%; top:0%;   width:33.3%; height:100%;                opacity:1;}
+		100% { z-index:150;   left:23.3%; top:-10%; width:53.3%; height:120%}				
 	 }	 
 
-   @keyframes third {		  
-		0%   { z-index:0;   left:66.6%;  top:0%; width:33.3%;height:100%}
-		20%  { z-index:150; top:-10%;  left:23.3%;width:53.3%;height:120%}
-		40%  { z-index:0;   left:0%; top:0%;width:33.3%;height:100%;opacity:1 }
-		60%  { z-index:0;   left:0%; display: none; opacity:0}
-		80%  { z-index:0;   left:100%; opacity:0;display:none;width:0%}
-		100% { z-index:0;   left:66.6%; width:33.3%; height:100%; opacity:1}
+	  @-webkit-keyframes second { 	    
+		 0%  { z-index:150;   left:23.3%; top:-10%; width:53.3%; height:120%} 		
+		20%  { z-index:0;     left:0%;    top:0%;   width:33.3%; height:100%;                opacity:1}		
+		40%  { z-index:0;     left:0%;                                        display:none;  opacity:0;}					   
+		60%  { z-index:0;     left:66.6%;           width:33.3%;              display:none;  opacity:0;}
+		80%  { z-index:0;     left:66.6%; top:0%;   width:33.3%; height:100%;                opacity:1;}
+		100% { z-index:150;   left:23.3%; top:-10%; width:53.3%; height:120%}					
 	 }
+	
+     @keyframes third {		  
+		0%   { z-index:0;   left:66.6%;  top:0%;   width:33.3%; height:100%:                opacity:1}
+		20%  { z-index:150; left:23.3%;  top:-10%; width:53.3%; height:120%}
+		40%  { z-index:0;   left:0%;     top:0%;   width:33.3%; height:100%;                opacity:1}
+		60%  { z-index:0;   left:0%;                                          display:none; opacity:0}		
+		80%  { z-index:0;   left:66.6%;            width:33.3%;               display:none; opacity:0}
+		100% { z-index:0;   left:66.6%; top:0%;    width:33.3%; height:100%;                opacity:1}
+	 }
+	 
+	 @-webkit-keyframes third {		  
+		0%   { z-index:0;   left:66.6%;  top:0%;   width:33.3%; height:100%:                opacity:1}
+		20%  { z-index:150; left:23.3%;  top:-10%; width:53.3%; height:120%}
+		40%  { z-index:0;   left:0%;     top:0%;   width:33.3%; height:100%;                opacity:1}
+		60%  { z-index:0;   left:0%;                                          display:none; opacity:0}		
+		80%  { z-index:0;   left:66.6%;            width:33.3%;               display:none; opacity:0}
+		100% { z-index:0;   left:66.6%; top:0%;    width:33.3%; height:100%;                opacity:1}
+	 }	 
 	
 	@keyframes fourth {      
-		0%   { z-index:0;   left:100%; opacity:0;width:0%}
-		20%  { z-index:0;   left:66.6%; top:0%;width:33.3%; height:100%; opacity:1}
-		40%  { z-index:150; left:23.3%; top:-10%; width:53.3%;height:120% }
-		60%  { z-index:0;   left:0%;    top:0%; width:33.3%;height:100%; opacity:1}
-		80%  { z-index:0;   left:0%;   opacity:0; display:none; }
-		100% { z-index:0;   left:100%; opacity:0;display:none;width:0%}
+		0%   { z-index:0;   left:66.6%;            width:33.3%;                             opacity:0}
+		20%  { z-index:0;   left:66.6%; top:0%;    width:33.3%; height:100%;                opacity:1}
+		40%  { z-index:150; left:23.3%; top:-10%;  width:53.3%; height:120%}
+		60%  { z-index:0;   left:0%;    top:0%;    width:33.3%; height:100%;                opacity:1}
+		80%  { z-index:0;   left:0%;                                          display:none; opacity:0} 
+		100% { z-index:0;   left:66.6%;            width:33.3%;               display:none; opacity:0}
 	}
-
+	
+	@-webkit-keyframes fourth {      
+		0%   { z-index:0;   left:66.6%;            width:33.3%;                             opacity:0;}
+		20%  { z-index:0;   left:66.6%; top:0%;    width:33.3%; height:100%;                opacity:1}
+		40%  { z-index:150; left:23.3%; top:-10%;  width:53.3%; height:120% }
+		60%  { z-index:0;   left:0%;    top:0%;    width:33.3%; height:100%;                opacity:1}
+		80%  { z-index:0;   left:0%;                                          display:none; opacity:0} 
+		100% { z-index:0;   left:66.6%;            width:33.3%;               display:none; opacity:0}
+	}
+	
 	@keyframes fifth {      			
-		0%  { z-index:0;   left:0%;   opacity:0; display:none; }
-		20%  { z-index:0;   left:100%; opacity:0;width:0%}
-		40%  { z-index:0;   left:66.6%; top:0%;width:33.3%; height:100%; opacity:1}
-		60%  {  z-index:150; left:23.3%; top:-10%; width:53.3%;height:120%}
-		80%  {  z-index:0;   left:0%;    top:0%; width:33.3%;height:100%; opacity:1 }
-		100% { z-index:0;   left:0%;   opacity:0; display:none;}
+		0%   { z-index:0;   left:0%;               width:33.3%; height:100%;  display:none; opacity:0}
+		20%  { z-index:0;   left:66.6%;            width:33.3%; height:100%;                opacity:0}
+		40%  { z-index:0;   left:66.6%; top:0%;    width:33.3%; height:100%;                opacity:1}
+		60%  { z-index:150; left:23.3%; top:-10%;  width:53.3%; height:120%}
+		80%  { z-index:0;   left:0%;    top:0%;    width:33.3%; height:100%;                opacity:1}
+		100% { z-index:0;   left:0%;    top:0%;    width:33.3%;                             opacity:0}
+	}
+	
+	@-webkit-keyframes fifth {      			
+		0%   { z-index:0;   left:0%;               width:33.3%; height:100%;  display:none; opacity:0}
+		20%  { z-index:0;   left:66.6%;            width:33.3%; height:100%;                opacity:0}
+		40%  { z-index:0;   left:66.6%; top:0%;    width:33.3%; height:100%;                opacity:1}
+		60%  { z-index:150; left:23.3%; top:-10%;  width:53.3%; height:120%}
+		80%  { z-index:0;   left:0%;    top:0%;    width:33.3%; height:100%;                opacity:1}
+		100% { z-index:0;   left:0%;    top:0%;    width:33.3%;                             opacity:0}
 	}
 
-	 .cell-1 .content-1 {	 	   
-		animation:first;
-		animation-name:first;		
+	
+	 .cell-1 .content-1 {	
+	 
 		background-color:red;
-		animation-duration:20s;	
+	 
+		-webkit-animation:first;
+		-webkit-animation-name:first;			
+		-webkit-animation-duration:15s;	
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-delay:2s;
+		
+		animation:first;
+		animation-name:first;			
+		animation-duration:15s;	
 		animation-iteration-count:infinite;
 		animation-delay:2s;
+				
 	 }
-	
+
 	 .cell-2 .content-2 {
-	    animation:second;
-		animation-name:second;		
+	 
 		background-color:green;
-		animation-duration:20s;
+		
+	    -webkit-animation:second;
+		-webkit-animation-name:second;	
+		-webkit-animation-duration:15s;
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-delay:2s;
+		
+	    animation:second;
+		animation-name:second;	
+		animation-duration:15s;
 		animation-iteration-count:infinite;
 		animation-delay:2s;
 
-		z-index:150;left:23.3%; top:-10%;  width:53.3%; height:120%
-	 }
-		
-	 .cell-3 .content-3 {
-	    animation:third;
-		animation-name:third;		
-		background-color:blue;
-		animation-duration:20s;
-		animation-iteration-count:infinite;
-		animation-delay:2s;
-		
+	    z-index:150; left:23.3%; top:-10%; width:53.3%; height:120%;
 	 }
 	
-	 .cell-3 .content-4 {
-	    animation:fourth;
-		animation-name:fourth;		
-		background-color:orange;
-		animation-duration:20s;
+	 .cell-3 .content-3 {	
+	 
+		background-color:blue;
+		
+	    -webkit-animation:third;
+		-webkit-animation-name:third;
+		-webkit-animation-duration:15s;
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-delay:2s;
+		
+	    animation:third;
+		animation-name:third;
+		animation-duration:15s;
 		animation-iteration-count:infinite;
 		animation-delay:2s;
+		
+		z-index:0; left:66.6%; top:0%; width:33.3%; opacity:1
+		
+	 }
 
-		z-index:0;   left:100%; width:0%; opacity:0
+	 .cell-3 .content-4 {
+	 
+		background-color:orange;
+		
+	    -webkit-animation:fourth;
+		-webkit-animation-name:fourth;	
+		-webkit-animation-duration:15s;
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-delay:2s;
+
+	    animation:fourth;
+		animation-name:fourth;	
+		animation-duration:15s;
+		animation-iteration-count:infinite;
+		animation-delay:2s;
+		
+		z-index:0; left:66.6%; top:0%; width:33.3%; opacity:0
 	 }
 
 	 .cell-3 .content-5 {
+	 
+		background-color:black;
+		color:white;
+		
+	    -webkit-animation:fifth;
+		-webkit-animation-name:fifth;		
+		-webkit-animation-duration:15s;
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-delay:2s;
+		
 	    animation:fifth;
 		animation-name:fifth;		
-		background-color:black;
-		animation-duration:20s;
+		animation-duration:15s;
 		animation-iteration-count:infinite;
-		animation-delay:2s;
-		color:white;
-
-		z-index:0;   left:100%; width:0%; opacity:0
+		animation-delay:2s;		
+		
+		left:66.6%; top:0%; width:33.3%; opacity:0; 
+		
 	 }
-
+	
   </style>
 </head>
 <body>
@@ -157,7 +252,7 @@
 	  <div class="stage">	 
 	  
 	    <div class="cell cell-1">
-				<div class="content content-1">
+			<div class="content content-1">
 					cell 1
 				</div>
 			</div>
@@ -172,12 +267,13 @@
 				<div class="content content-3">
 					cell 3
 				</div>
+				
 				<div class="content content-4">
 						cell 4
 				</div>
 				<div class="content content-5">
 						cell 5
-				</div>			
+				</div>		
 			</div>
 				 
 
